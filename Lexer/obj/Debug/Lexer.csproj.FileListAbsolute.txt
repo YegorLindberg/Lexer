@@ -1,0 +1,7 @@
+C:\GitHub\Lexer\Lexer\bin\Debug\Lexer.exe.config
+C:\GitHub\Lexer\Lexer\bin\Debug\Lexer.exe
+C:\GitHub\Lexer\Lexer\bin\Debug\Lexer.pdb
+C:\GitHub\Lexer\Lexer\obj\Debug\Lexer.csproj.CoreCompileInputs.cache
+C:\GitHub\Lexer\Lexer\obj\Debug\Lexer.exe
+C:\GitHub\Lexer\Lexer\obj\Debug\Lexer.pdb
+C:\GitHub\Lexer\Lexer\obj\Debug\Lexer.csprojAssemblyReference.cache
