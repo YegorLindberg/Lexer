@@ -22,7 +22,7 @@ namespace Lexer.TokenValue
         [Keyword("else")] Else,
         [Keyword("do")] Do,
         [Keyword("while")] While,
-        [Keyword("for")] For        
+        [Keyword("for")] For
     }
     
     

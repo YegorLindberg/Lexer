@@ -8,3 +8,13 @@
 /Users/moore/Documents/GitHub/Lexer/Lexer/Lexer/obj/Debug/netcoreapp2.0/Lexer.AssemblyInfo.cs
 /Users/moore/Documents/GitHub/Lexer/Lexer/Lexer/obj/Debug/netcoreapp2.0/Lexer.dll
 /Users/moore/Documents/GitHub/Lexer/Lexer/Lexer/obj/Debug/netcoreapp2.0/Lexer.pdb
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/bin/Debug/netcoreapp2.0/Lexer.deps.json
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/bin/Debug/netcoreapp2.0/Lexer.runtimeconfig.json
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/bin/Debug/netcoreapp2.0/Lexer.runtimeconfig.dev.json
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/bin/Debug/netcoreapp2.0/Lexer.dll
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/bin/Debug/netcoreapp2.0/Lexer.pdb
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/obj/Debug/netcoreapp2.0/Lexer.csproj.CoreCompileInputs.cache
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/obj/Debug/netcoreapp2.0/Lexer.AssemblyInfoInputs.cache
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/obj/Debug/netcoreapp2.0/Lexer.AssemblyInfo.cs
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/obj/Debug/netcoreapp2.0/Lexer.dll
+/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/obj/Debug/netcoreapp2.0/Lexer.pdb

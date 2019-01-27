@@ -41,13 +41,17 @@ namespace Lexer.TokenValue
             "program",
             "var",
             "let",
-            "function",
+            "Char",
+            "String",
+            "Int",
+            "Float",
+            "Bool",
+            "null",
             "if",
             "else",
             "do",
             "while",
-            "for",
-            "null"
+            "for"
         };
     }
 }

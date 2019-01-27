@@ -682,11 +682,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/moore/Documents/GitHub/Lexer/Lexer/Lexer/Lexer.csproj",
+      "projectUniqueName": "/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/Lexer.csproj",
       "projectName": "Lexer",
-      "projectPath": "/Users/moore/Documents/GitHub/Lexer/Lexer/Lexer/Lexer.csproj",
+      "projectPath": "/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/Lexer.csproj",
       "packagesPath": "/Users/moore/.nuget/packages/",
-      "outputPath": "/Users/moore/Documents/GitHub/Lexer/Lexer/Lexer/obj/",
+      "outputPath": "/Users/moore/Documents/GitHub/Lexer-repo/Lexer/Lexer/Lexer/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
