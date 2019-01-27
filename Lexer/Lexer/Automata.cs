@@ -71,8 +71,8 @@ namespace Lexer
                 word += line[i].ToString();
                 i++;
             }
-            if (Global.reservedWords.Contains(word)) { Console.WriteLine("keyword: " + word); }
-            else { Console.WriteLine("Id: " + "ID" + ", val: " + word); }
+            if (Global.reservedWords.Contains(word)) { Console.WriteLine("Keyword: " + word); }
+            else { Console.WriteLine("Id: " + Keywords.Identificator + ", val: " + word); }
             if ((i < line.Count()) && wasProcessing) { ProcessLine(line, i); }
         }
 
@@ -109,7 +109,7 @@ namespace Lexer
                 }
                 if (!wasProcessing) { wasProcessing = true; }
             }
-            if (isInteger) { Console.WriteLine("id: " + "Integer" + ", val: " + number); }
+            if (isInteger) { Console.WriteLine("id: " + Keywords.Int + ", val: " + number); }
             if ((i < line.Count()) && wasProcessing && isInteger) { ProcessLine(line, i); }
         }
 
@@ -118,6 +118,7 @@ namespace Lexer
             int i = index;
             bool wasDot = false;
             bool isDouble = true;
+            bool withExponent = false;
             while ((i < line.Count())
                    && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i]))
                    && isDouble)
@@ -140,8 +141,13 @@ namespace Lexer
                             var dotAnswer = ReadToLimiter(line, i, number);
                             i = dotAnswer.Item2;
                             Console.WriteLine("Error in double: " + dotAnswer.Item1);
-                            isDouble = false; 
+                            isDouble = false;
                         }
+                        break;
+                    case char ch when (ch.ToString() == NumericSystem.WithExponent.GetStringValue()):
+                        ProcessNumberWithExponent(line, i, number);
+                        withExponent = true;
+                        isDouble = false;
                         break;
                     default:
                         var answer = ReadToLimiter(line, i, number);
@@ -152,10 +158,10 @@ namespace Lexer
                 }
             }
             if ((number[number.Length - 1] != '.') && (isDouble))
-            { Console.WriteLine("Id: " + "Double" + ", val: " + number); }
+            { Console.WriteLine("Id: " + Keywords.Double + ", val: " + number); }
             else if (number[number.Length - 1] == '.')
             { Console.WriteLine("Error in double: " + number); }
-            if ((i < line.Count())) { ProcessLine(line, i); }
+            if ((i < line.Count()) && !withExponent) { ProcessLine(line, i); }
         }
         
         private void DetermineNumericSystem(string line, int index, string number)
@@ -171,8 +177,8 @@ namespace Lexer
                 case string str when (str == NumericSystem.Octal.GetStringValue()):
                     ProcessNondecimalNumber(line, index, number, NumericSystem.Octal);
                     break;
-                case string str when (str == NumericSystem.Exponent.GetStringValue()):
-                    Console.WriteLine("ID: Exponent"); //TODO: Func to Exponent.
+                case string str when (str == NumericSystem.WithExponent.GetStringValue()):
+                    ProcessNumberWithExponent(line, index, number);
                     break;
                 default:
                     var answer = ReadToLimiter(line, index, number);
@@ -182,7 +188,6 @@ namespace Lexer
             }
             
         }
-
 
         private void ProcessNondecimalNumber(string line, int index, string number, NumericSystem numSys)
         {
@@ -216,7 +221,7 @@ namespace Lexer
                     {
                         var answer = ReadToLimiter(line, i, number);
                         i = answer.Item2;
-                        Console.WriteLine("Error in " + numSys.ToString() +": " + answer.Item1);
+                        Console.WriteLine("Error in " + numSys +": " + answer.Item1);
                         isNumber = false;
                     }
                 }
@@ -225,22 +230,56 @@ namespace Lexer
             {
                 var answer = ReadToLimiter(line, index, number);
                 index = answer.Item2;
-                Console.WriteLine("Error in " + numSys.ToString() + ": " + answer.Item1);
+                Console.WriteLine("Error in " + numSys + ": " + answer.Item1);
             }
             if (!Char.IsLetter(number[number.Length - 1]) && isNumber)
-            { Console.WriteLine("Id: " + numSys.ToString() + ", val: " + number); }
+            { Console.WriteLine("Id: " + numSys + ", val: " + number); }
             if ((i < line.Count())) { ProcessLine(line, i); }
         }
         
         private void ProcessNumberWithExponent(string line, int index, string number)
         {
-            
+            int i = index;
+            bool isNumber = true;
+            number += line[i].ToString();
+            i++;
+            if ((number.Length >= 1) && (number[0] != '0') && ((line[i] == '+') || (line[i] == '-')))
+            {
+                number += line[i].ToString();
+                i++;
+                while ((i < line.Count())
+                       && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i]))
+                       && isNumber)
+                {
+                    if (Char.IsDigit(line[i]) || (line[i] == Global.separator))
+                    {
+                        number += line[i].ToString();
+                        i++;
+                    }
+                    else
+                    {
+                        var answer = ReadToLimiter(line, i, number);
+                        i = answer.Item2;
+                        Console.WriteLine("Error in " + NumericSystem.WithExponent +": " + answer.Item1);
+                        isNumber = false;
+                    }
+                }
+            }
+            else
+            {
+                var answer = ReadToLimiter(line, index, number);
+                index = answer.Item2;
+                Console.WriteLine("Error in number " + NumericSystem.WithExponent + ": " + answer.Item1);
+            }
+            if (!Char.IsLetter(number[number.Length - 1]) && isNumber)
+            { Console.WriteLine("Id: " + NumericSystem.WithExponent + ", val: " + number); }
+            if ((i < line.Count())) { ProcessLine(line, i); }
         }
         
         private void ProcessLimiter(string line, int index)
         {
             int i = index;
-            //processing
+            //TODO: processing limiters
             if (i + 1 < line.Count()) { ProcessLine(line, i + 1); }
         }
         

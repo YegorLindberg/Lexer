@@ -19,6 +19,7 @@
           <e p="ExtensionsMethods.cs" t="Include" />
           <e p="Global.cs" t="Include" />
           <e p="KeywordAttribute.cs" t="Include" />
+          <e p="SimpleKeyword.cs" t="Include" />
         </e>
       </e>
       <e p="Lexer.sln" t="IncludeFlat" />

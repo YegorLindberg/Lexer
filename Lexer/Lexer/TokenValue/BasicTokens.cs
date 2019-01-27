@@ -5,12 +5,13 @@ namespace Lexer.TokenValue
         [Keyword("x")] Hexadecimal = 1,
         [Keyword("b")] Byte,
         [Keyword("o")] Octal,
-        [Keyword("E")] Exponent
+        [Keyword("E")] WithExponent
     }
 
     public enum Keywords
     {
-        [Keyword("program")] Program = 4,
+        Identificator = 4,
+        [Keyword("program")] Program,
         [Keyword("var")] Var,
         [Keyword("let")] Let,
         [Keyword("Int")] Int,

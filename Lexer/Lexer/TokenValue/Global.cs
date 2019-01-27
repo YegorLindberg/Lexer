@@ -10,14 +10,6 @@ namespace Lexer.TokenValue
             '0',
             '1'
         };
-        
-        public static char[] numberSystems =
-        {
-            'x',
-            'b',
-            'o',
-            'E'
-        };
 
         public static char[] mainLimiters =
         {
