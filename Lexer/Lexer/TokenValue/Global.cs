@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace Lexer.TokenValue
 {
     public class Global

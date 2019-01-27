@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef6717d2-6376-4999-b824-643a07c8ae6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Lexer/TokenValue/SimpleKeyword.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lexer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lexer/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lexer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lexer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lexer/Automata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/Automata.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lexer/TokenValue/BasicTokens.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/TokenValue/BasicTokens.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lexer/TokenValue/Global.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/TokenValue/Global.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lexer/TokenValue/KeywordAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/TokenValue/KeywordAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lexer/bin/Debug/netcoreapp2.0/Lexer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/bin/Debug/netcoreapp2.0/Lexer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lexer/bin/Debug/netcoreapp2.0/Lexer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/bin/Debug/netcoreapp2.0/Lexer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lexer/obj/Debug/netcoreapp2.0/Lexer.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/obj/Debug/netcoreapp2.0/Lexer.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lexer/obj/Debug/netcoreapp2.0/Lexer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/obj/Debug/netcoreapp2.0/Lexer.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lexer/obj/Debug/netcoreapp2.0/Lexer.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/obj/Debug/netcoreapp2.0/Lexer.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lexer/TokenValue/SimpleKeyword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lexer/TokenValue/SimpleToken.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lexer/Automata.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="164" column="9" lean-forward="true" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+            <state relative-caret-position="257">
+              <caret line="276" column="9" lean-forward="true" selection-start-line="276" selection-start-column="9" selection-end-line="276" selection-end-column="9" />
               <folding>
                 <marker date="1548612411281" expanded="false" signature="6:139" ph="..." />
                 <marker date="1548612411281" expanded="true" signature="156:11703" ph="{...}" />
@@ -78,12 +69,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/BasicTokens.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+            <state>
+              <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
               <folding>
-                <marker date="1548612006868" expanded="true" signature="26:624" ph="{...}" />
-                <marker date="1548612006868" expanded="true" signature="58:205" ph="{...}" />
-                <marker date="1548612006868" expanded="true" signature="231:617" ph="{...}" />
+                <marker date="1548613397037" expanded="true" signature="26:1485" ph="{...}" />
+                <marker date="1548613397037" expanded="true" signature="58:205" ph="{...}" />
+                <marker date="1548613397037" expanded="true" signature="231:617" ph="{...}" />
+                <marker date="1548613397037" expanded="true" signature="643:1478" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -92,43 +84,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/Global.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+            <state relative-caret-position="608">
+              <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
               <folding>
-                <marker date="1548608292417" expanded="true" signature="26:970" ph="{...}" />
-                <marker date="1548608292417" expanded="true" signature="52:968" ph="{...}" />
-                <marker date="1548608292417" expanded="true" signature="198:242" ph="{...}" />
-                <marker date="1548608292417" expanded="true" signature="297:358" ph="{...}" />
-                <marker date="1548608292417" expanded="true" signature="418:666" ph="{...}" />
-                <marker date="1548608292417" expanded="true" signature="733:961" ph="{...}" />
+                <marker date="1548613451429" expanded="true" signature="65:1009" ph="{...}" />
+                <marker date="1548613451429" expanded="true" signature="91:1007" ph="{...}" />
+                <marker date="1548613451429" expanded="true" signature="237:281" ph="{...}" />
+                <marker date="1548613451429" expanded="true" signature="336:397" ph="{...}" />
+                <marker date="1548613451429" expanded="true" signature="457:705" ph="{...}" />
+                <marker date="1548613451429" expanded="true" signature="772:1000" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/KeywordAttribute.cs">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/SimpleToken.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            <state relative-caret-position="160">
+              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
               <folding>
-                <marker date="1548609795310" expanded="true" signature="41:316" ph="{...}" />
-                <marker date="1548609795310" expanded="true" signature="159:311" ph="{...}" />
-                <marker date="1548609795310" expanded="true" signature="256:305" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/SimpleKeyword.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-              <folding>
-                <marker date="1548609788085" expanded="true" signature="41:325" ph="{...}" />
-                <marker date="1548609788085" expanded="true" signature="165:323" ph="{...}" />
-                <marker date="1548609788085" expanded="true" signature="268:317" ph="{...}" />
+                <marker date="1548612585470" expanded="true" signature="41:321" ph="{...}" />
+                <marker date="1548612585470" expanded="true" signature="163:319" ph="{...}" />
+                <marker date="1548612585470" expanded="true" signature="264:313" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -165,7 +143,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Lexer/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/Automata.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Lexer/TokenValue/SimpleKeyword.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Lexer/TokenValue/SimpleToken.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/TokenValue/KeywordAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/TokenValue/BasicTokens.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lexer/TokenValue/ExtensionsMethods.cs" root0="FORCE_HIGHLIGHTING" />
@@ -180,11 +158,12 @@
         <option value="$PROJECT_DIR$/Lexer/TokenValue/Class1.cs" />
         <option value="$PROJECT_DIR$/Lexer/TokenValue/Globals.cs" />
         <option value="$PROJECT_DIR$/Lexer/TokenValue/ExtensionsMethods.cs" />
-        <option value="$PROJECT_DIR$/Lexer/TokenValue/Global.cs" />
         <option value="$PROJECT_DIR$/Lexer/TokenValue/SimpleKeyword.cs" />
         <option value="$PROJECT_DIR$/Lexer/TokenValue/KeywordAttribute.cs" />
-        <option value="$PROJECT_DIR$/Lexer/TokenValue/BasicTokens.cs" />
         <option value="$PROJECT_DIR$/Lexer/Automata.cs" />
+        <option value="$PROJECT_DIR$/Lexer/TokenValue/SimpleToken.cs" />
+        <option value="$PROJECT_DIR$/Lexer/TokenValue/BasicTokens.cs" />
+        <option value="$PROJECT_DIR$/Lexer/TokenValue/Global.cs" />
       </list>
     </option>
   </component>
@@ -294,12 +273,12 @@
       <option name="presentableId" value="Default" />
       <updated>1548493302611</updated>
       <workItem from="1548493306717" duration="24790000" />
-      <workItem from="1548594949348" duration="15907000" />
+      <workItem from="1548594949348" duration="16866000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40697000" />
+    <option name="totallyTimeSpent" value="41656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -312,9 +291,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23424879" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23424879" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -377,14 +355,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/Class1.cs" />
     <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/Globals.cs" />
-    <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/SimpleKeyword.cs">
+    <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/KeywordAttribute.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="48">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
           <folding>
-            <marker date="1548609788085" expanded="true" signature="41:325" ph="{...}" />
-            <marker date="1548609788085" expanded="true" signature="165:323" ph="{...}" />
-            <marker date="1548609788085" expanded="true" signature="268:317" ph="{...}" />
+            <marker date="1548609795310" expanded="true" signature="41:316" ph="{...}" />
+            <marker date="1548609795310" expanded="true" signature="159:311" ph="{...}" />
+            <marker date="1548609795310" expanded="true" signature="256:305" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -403,49 +381,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/KeywordAttribute.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-          <folding>
-            <marker date="1548609795310" expanded="true" signature="41:316" ph="{...}" />
-            <marker date="1548609795310" expanded="true" signature="159:311" ph="{...}" />
-            <marker date="1548609795310" expanded="true" signature="256:305" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/Global.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-          <folding>
-            <marker date="1548608292417" expanded="true" signature="26:970" ph="{...}" />
-            <marker date="1548608292417" expanded="true" signature="52:968" ph="{...}" />
-            <marker date="1548608292417" expanded="true" signature="198:242" ph="{...}" />
-            <marker date="1548608292417" expanded="true" signature="297:358" ph="{...}" />
-            <marker date="1548608292417" expanded="true" signature="418:666" ph="{...}" />
-            <marker date="1548608292417" expanded="true" signature="733:961" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/BasicTokens.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding>
-            <marker date="1548612006868" expanded="true" signature="26:624" ph="{...}" />
-            <marker date="1548612006868" expanded="true" signature="58:205" ph="{...}" />
-            <marker date="1548612006868" expanded="true" signature="231:617" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lexer/Automata.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="164" column="9" lean-forward="true" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+        <state relative-caret-position="257">
+          <caret line="276" column="9" lean-forward="true" selection-start-line="276" selection-start-column="9" selection-end-line="276" selection-end-column="9" />
           <folding>
             <marker date="1548612411281" expanded="false" signature="6:139" ph="..." />
             <marker date="1548612411281" expanded="true" signature="156:11703" ph="{...}" />
@@ -487,6 +426,46 @@
             <marker date="1548612411281" expanded="true" signature="10980:11217" ph="{...}" />
             <marker date="1548612411281" expanded="true" signature="11288:11381" ph="{...}" />
             <marker date="1548612411281" expanded="true" signature="11522:11677" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/BasicTokens.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+          <folding>
+            <marker date="1548613397037" expanded="true" signature="26:1485" ph="{...}" />
+            <marker date="1548613397037" expanded="true" signature="58:205" ph="{...}" />
+            <marker date="1548613397037" expanded="true" signature="231:617" ph="{...}" />
+            <marker date="1548613397037" expanded="true" signature="643:1478" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/Global.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+          <folding>
+            <marker date="1548613451429" expanded="true" signature="65:1009" ph="{...}" />
+            <marker date="1548613451429" expanded="true" signature="91:1007" ph="{...}" />
+            <marker date="1548613451429" expanded="true" signature="237:281" ph="{...}" />
+            <marker date="1548613451429" expanded="true" signature="336:397" ph="{...}" />
+            <marker date="1548613451429" expanded="true" signature="457:705" ph="{...}" />
+            <marker date="1548613451429" expanded="true" signature="772:1000" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lexer/TokenValue/SimpleToken.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <marker date="1548612585470" expanded="true" signature="41:321" ph="{...}" />
+            <marker date="1548612585470" expanded="true" signature="163:319" ph="{...}" />
+            <marker date="1548612585470" expanded="true" signature="264:313" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -3,11 +3,11 @@ using System;
 namespace Lexer.TokenValue
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
-    internal class SimpleKeywordAttribute : Attribute
+    internal class SimpleTokenAttribute : Attribute
     {
         public string Value { get; set; }
 
-        public SimpleKeywordAttribute(string content)
+        public SimpleTokenAttribute(string content)
         {
             Value = content;
         }
