@@ -23,6 +23,13 @@ namespace Lexer.TokenValue
         [Keyword("while")] While,
         [Keyword("for")] For
     }
+    
+    public enum MainLimiters
+    {
+        [SimpleToken(".")] Dot,
+        [SimpleToken(",")] Comma,
+        [SimpleToken(";")] Semicolon
+    }
 
     public enum Limiters
     {
@@ -34,24 +41,21 @@ namespace Lexer.TokenValue
 
         [SimpleToken("(")] LeftParenthesis,
         [SimpleToken(")")] RightParenthesis,
-
-        [SimpleToken(">=")] GreaterOrEqual,
+        
         [SimpleToken(">")] Greater,
-        [SimpleToken("<=")] LessOrEqual,
         [SimpleToken("<")] Less,
         [SimpleToken("+")] Plus,
         [SimpleToken("-")] Minus,
         [SimpleToken("=")] Assignment,
-        [SimpleToken("==")] Equal,
         [SimpleToken("!")] Not,
-        [SimpleToken("!=")] NotEqual,
         [SimpleToken("*")] Multiply,
         [SimpleToken("/")] Divide,
         [SimpleToken("%")] Mod,
-
-        [SimpleToken(".")] Dot,
-        [SimpleToken(",")] Comma,
-        [SimpleToken(";")] Semicolon
+        
+        [SimpleToken(">=")] GreaterOrEqual,
+        [SimpleToken("<=")] LessOrEqual,
+        [SimpleToken("==")] Equal,
+        [SimpleToken("!=")] NotEqual
     }
     
 }

@@ -22,20 +22,21 @@ namespace Lexer.TokenValue
         
         public static char[] limiters = 
         {
-            '(',
-            ')',
             '[',
             ']',
-            ':',
+            '{',
+            '}',
+            '(',
+            ')',
+            '>',
+            '<',
             '+',
             '-',
+            '=',
+            '!',
             '*',
             '/',
-            '<',
-            '>',
-            '@',
-            '!',
-            '='
+            '%',
         };
         
         public static string[] reservedWords = 

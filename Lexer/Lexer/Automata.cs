@@ -272,17 +272,90 @@ namespace Lexer
                 Console.WriteLine("Error in number " + NumericSystem.WithExponent + ": " + answer.Item1);
             }
             if (!Char.IsLetter(number[number.Length - 1]) && isNumber)
-            { Console.WriteLine("Id: " + NumericSystem.WithExponent + ", val: " + number); }
+            { Console.WriteLine("Id: number " + NumericSystem.WithExponent + ", val: " + number); }
             if ((i < line.Count())) { ProcessLine(line, i); }
         }
         
         private void ProcessLimiter(string line, int index)
         {
             int i = index;
-            //TODO: processing limiters
-            if (i + 1 < line.Count()) { ProcessLine(line, i + 1); }
+            string possibleToken = line[i].ToString() + line[i + 1].ToString();
+            bool complex = false;
+            switch (possibleToken)
+            {
+                case string str when (str == Limiters.GreaterOrEqual.GetSimpleTokenString()):
+                    Console.WriteLine("Id: " + Limiters.GreaterOrEqual + ", val: " + str);
+                    i++;
+                    complex = true;
+                    break;
+                case string str when (str == Limiters.LessOrEqual.GetSimpleTokenString()):
+                    Console.WriteLine("Id: " + Limiters.LessOrEqual + ", val: " + str);
+                    i++;
+                    complex = true;
+                    break;
+                case string str when (str == Limiters.Equal.GetSimpleTokenString()):
+                    Console.WriteLine("Id: " + Limiters.Equal + ", val: " + str);
+                    i++;
+                    complex = true;
+                    break;
+                case string str when (str == Limiters.NotEqual.GetSimpleTokenString()):
+                    Console.WriteLine("Id: " + Limiters.NotEqual + ", val: " + str);
+                    i++;
+                    complex = true;
+                    break;
+            }
+            if (!complex)
+            {
+                switch (line[i].ToString())
+                {
+                    case string ch when (ch == Limiters.LeftBracket.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.LeftBracket + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.RightBracket.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.RightBracket + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.LeftBrace.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.LeftBrace + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.RightBrace.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.RightBrace + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.LeftParenthesis.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.LeftParenthesis + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.RightParenthesis.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.RightParenthesis + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.Greater.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.Greater + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.Less.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.Less + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.Plus.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.Plus + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.Minus.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.Minus + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.Assignment.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.Assignment + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.Not.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.Not + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.Multiply.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.Multiply + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.Divide.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.Divide + ", val: " + ch);
+                        break;
+                    case string ch when (ch == Limiters.Mod.GetSimpleTokenString()):
+                        Console.WriteLine("Id: " + Limiters.Mod + ", val: " + ch);
+                        break;
+                }
+            }
+            if (++i < line.Count()) { ProcessLine(line, i); }
         }
-        
-        
     }
 }
