@@ -1,6 +1,0 @@
-asd 1 2
-!.<
-for fo r ford
-while
-var a = 0x7741
-int b = 0b0100
