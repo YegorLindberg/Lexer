@@ -4,6 +4,7 @@ namespace Lexer.TokenValue
     {
         [Keyword("x")] Hexadecimal = 1,
         [Keyword("b")] Byte,
+        [Keyword("o")] Octal,
         [Keyword("E")] Exponent
     }
 
@@ -12,11 +13,8 @@ namespace Lexer.TokenValue
         [Keyword("program")] Program = 4,
         [Keyword("var")] Var,
         [Keyword("let")] Let,
-        [Keyword("Char")] Char,
-        [Keyword("String")] String,
         [Keyword("Int")] Int,
-        [Keyword("Float")] Float,
-        [Keyword("Bool")] Bool,
+        [Keyword("Double")] Double,
         [Keyword("null")] Null,
         [Keyword("if")] If,
         [Keyword("else")] Else,
@@ -24,6 +22,5 @@ namespace Lexer.TokenValue
         [Keyword("while")] While,
         [Keyword("for")] For
     }
-    
     
 }

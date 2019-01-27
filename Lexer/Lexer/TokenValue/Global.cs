@@ -2,12 +2,20 @@ namespace Lexer.TokenValue
 {
     public class Global
     {
-        public static char space = ' ';
+        public static char whiteSpace = ' ';
+        public static char separator = '_';
 
+        public static char[] byteDigit =
+        {
+            '0',
+            '1'
+        };
+        
         public static char[] numberSystems =
         {
             'x',
             'b',
+            'o',
             'E'
         };
 
@@ -41,11 +49,8 @@ namespace Lexer.TokenValue
             "program",
             "var",
             "let",
-            "Char",
-            "String",
             "Int",
-            "Float",
-            "Bool",
+            "Double",
             "null",
             "if",
             "else",

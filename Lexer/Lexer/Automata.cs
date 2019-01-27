@@ -13,7 +13,7 @@ namespace Lexer
         {
             switch (line[index])
             {
-                case ' ':
+                case char ch when (ch == Global.whiteSpace):
                     ProcessSpace(line, index);
                     break;
                 case char ch when Char.IsLetter(ch):                    
@@ -31,6 +31,20 @@ namespace Lexer
             }
         }
 
+        private Tuple<string, int> ReadToLimiter(string line, int index, string value)
+        {
+            int i = index;
+            string val = value;
+            while ((i < line.Count())
+                   && ((line[i] != Global.whiteSpace) || !Global.limiters.Contains(line[i])))
+            {
+                val += line[i].ToString();
+                i++;
+            }
+            var pair = new Tuple<string, int>(val, i);
+            return pair;
+        }
+        
         private void ProcessSpace(string line, int index)
         {            
             int i = index;
@@ -49,7 +63,7 @@ namespace Lexer
             string word = "";
             bool wasProcessing = false;
             while ((i < line.Count())
-                   && ((line[i] != Global.space) 
+                   && ((line[i] != Global.whiteSpace) 
                        && !Global.limiters.Contains(line[i]) 
                        && !Global.mainLimiters.Contains(line[i])))
             {
@@ -69,7 +83,7 @@ namespace Lexer
             bool isInteger = true;
             bool wasProcessing = false;
             while ((i < line.Count()) 
-                   && ((line[i] != Global.space) && !Global.limiters.Contains(line[i]))
+                   && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i]))
                    && isInteger)
             {
                 switch (line[i])
@@ -105,7 +119,7 @@ namespace Lexer
             bool wasDot = false;
             bool isDouble = true;
             while ((i < line.Count())
-                   && ((line[i] != Global.space) && !Global.limiters.Contains(line[i]))
+                   && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i]))
                    && isDouble)
             {
                 switch (line[i])
@@ -138,7 +152,7 @@ namespace Lexer
                 }
             }
             if ((number[number.Length - 1] != '.') && (isDouble))
-            { Console.WriteLine("Id: " + "Double" + ", val:" + number); }
+            { Console.WriteLine("Id: " + "Double" + ", val: " + number); }
             else if (number[number.Length - 1] == '.')
             { Console.WriteLine("Error in double: " + number); }
             if ((i < line.Count())) { ProcessLine(line, i); }
@@ -149,10 +163,13 @@ namespace Lexer
             switch (line[index].ToString())
             {
                 case string str when (str == NumericSystem.Hexadecimal.GetStringValue()):
-                    Console.WriteLine("ID: Hexadecimal"); //TODO: Func to Hexadecimal.
+                    ProcessNondecimalNumber(line, index, number, NumericSystem.Hexadecimal);
                     break;
                 case string str when (str == NumericSystem.Byte.GetStringValue()):
-                    Console.WriteLine("ID: Byte"); //TODO: Func to Byte.
+                    ProcessNondecimalNumber(line, index, number, NumericSystem.Byte);
+                    break;
+                case string str when (str == NumericSystem.Octal.GetStringValue()):
+                    ProcessNondecimalNumber(line, index, number, NumericSystem.Octal);
                     break;
                 case string str when (str == NumericSystem.Exponent.GetStringValue()):
                     Console.WriteLine("ID: Exponent"); //TODO: Func to Exponent.
@@ -166,21 +183,60 @@ namespace Lexer
             
         }
 
-        private Tuple<string, int> ReadToLimiter(string line, int index, string value)
+
+        private void ProcessNondecimalNumber(string line, int index, string number, NumericSystem numSys)
         {
             int i = index;
-            string val = value;
-            while ((i < line.Count())
-                   && ((line[i] != Global.space) || !Global.limiters.Contains(line[i])))
+            bool isNumber = true;
+            if ((number.Length == 1) && (number[0] == '0'))
             {
-                val += line[i].ToString();
+                number += line[i].ToString();
                 i++;
+                while ((i < line.Count())
+                       && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i]))
+                       && isNumber)
+                {
+                    bool isRequiredDigit = false;
+                    switch (numSys)
+                    {
+                        case NumericSystem ns when 
+                            ((ns == NumericSystem.Hexadecimal) || (ns == NumericSystem.Octal)):
+                            isRequiredDigit = Char.IsDigit(line[i]);
+                            break;
+                        case NumericSystem.Byte:
+                            isRequiredDigit = Global.byteDigit.Contains(line[i]);
+                            break;
+                    }
+                    if (isRequiredDigit || (line[i] == Global.separator))
+                    {
+                        number += line[i].ToString();
+                        i++;
+                    }
+                    else
+                    {
+                        var answer = ReadToLimiter(line, i, number);
+                        i = answer.Item2;
+                        Console.WriteLine("Error in " + numSys.ToString() +": " + answer.Item1);
+                        isNumber = false;
+                    }
+                }
             }
-            var pair = new Tuple<string, int>(val, i);
-            return pair;
+            else
+            {
+                var answer = ReadToLimiter(line, index, number);
+                index = answer.Item2;
+                Console.WriteLine("Error in " + numSys.ToString() + ": " + answer.Item1);
+            }
+            if (!Char.IsLetter(number[number.Length - 1]) && isNumber)
+            { Console.WriteLine("Id: " + numSys.ToString() + ", val: " + number); }
+            if ((i < line.Count())) { ProcessLine(line, i); }
         }
         
-
+        private void ProcessNumberWithExponent(string line, int index, string number)
+        {
+            
+        }
+        
         private void ProcessLimiter(string line, int index)
         {
             int i = index;
