@@ -29,14 +29,15 @@ namespace Lexer
                     Console.WriteLine("Unknown symbol.");
                     break;
             }
+
         }
 
         private Tuple<string, int> ReadToLimiter(string line, int index, string value)
         {
             int i = index;
             string val = value;
-            while ((i < line.Count())
-                   && ((line[i] != Global.whiteSpace) || !Global.limiters.Contains(line[i])))
+            while ((i < line.Length)
+                   && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i])))
             {
                 val += line[i].ToString();
                 i++;
@@ -49,12 +50,12 @@ namespace Lexer
         {            
             int i = index;
             bool wasProcessing = false;
-            while ((i < line.Count()) && (line[i] == ' '))
+            while ((i < line.Length) && (line[i] == ' '))
             {
                 if (!wasProcessing) { wasProcessing = true; }
                 i++;
             }
-            if ((i < line.Count()) && wasProcessing) { ProcessLine(line, i); }
+            if ((i < line.Length) && wasProcessing) { ProcessLine(line, i); }
         }
 
         private void ProcessLetter(string line, int index)
@@ -62,7 +63,7 @@ namespace Lexer
             int i = index;
             string word = "";
             bool wasProcessing = false;
-            while ((i < line.Count())
+            while ((i < line.Length)
                    && ((line[i] != Global.whiteSpace) 
                        && !Global.limiters.Contains(line[i]) 
                        && !Global.mainLimiters.Contains(line[i])))
@@ -73,7 +74,7 @@ namespace Lexer
             }
             if (Global.reservedWords.Contains(word)) { Console.WriteLine("Keyword: " + word); }
             else { Console.WriteLine("Id: " + Keywords.Identificator + ", val: " + word); }
-            if ((i < line.Count()) && wasProcessing) { ProcessLine(line, i); }
+            if ((i < line.Length) && wasProcessing) { ProcessLine(line, i); }
         }
 
         private void ProcessDigit(string line, int index)
@@ -82,7 +83,7 @@ namespace Lexer
             string number = "";
             bool isInteger = true;
             bool wasProcessing = false;
-            while ((i < line.Count()) 
+            while ((i < line.Length) 
                    && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i]))
                    && isInteger)
             {
@@ -110,7 +111,7 @@ namespace Lexer
                 if (!wasProcessing) { wasProcessing = true; }
             }
             if (isInteger) { Console.WriteLine("id: " + Keywords.Int + ", val: " + number); }
-            if ((i < line.Count()) && wasProcessing && isInteger) { ProcessLine(line, i); }
+            if ((i < line.Length) && wasProcessing && isInteger) { ProcessLine(line, i); }
         }
 
         private void ProcessDouble(string line, int index, string number)
@@ -119,7 +120,7 @@ namespace Lexer
             bool wasDot = false;
             bool isDouble = true;
             bool withExponent = false;
-            while ((i < line.Count())
+            while ((i < line.Length)
                    && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i]))
                    && isDouble)
             {
@@ -145,23 +146,24 @@ namespace Lexer
                         }
                         break;
                     case char ch when (ch.ToString() == NumericSystem.WithExponent.GetStringValue()):
-                        ProcessNumberWithExponent(line, i, number);
                         withExponent = true;
+                        ProcessNumberWithExponent(line, i, number);
                         isDouble = false;
                         break;
                     default:
                         var answer = ReadToLimiter(line, i, number);
                         i = answer.Item2;
-                        Console.WriteLine("Error in double: " + answer.Item1);
+                        number = answer.Item1;
+                        Console.WriteLine("Error in double: " + number);
                         isDouble = false;
                         break;
                 }
             }
-            if ((number[number.Length - 1] != '.') && (isDouble))
+            if ((number[number.Length - 1] != '.') && (isDouble)) 
             { Console.WriteLine("Id: " + Keywords.Double + ", val: " + number); }
-            else if (number[number.Length - 1] == '.')
+            else if ((number[number.Length - 1] == '.') && (!withExponent))
             { Console.WriteLine("Error in double: " + number); }
-            if ((i < line.Count()) && !withExponent) { ProcessLine(line, i); }
+            if ((i < line.Length) && !withExponent) { ProcessLine(line, i); }
         }
         
         private void DetermineNumericSystem(string line, int index, string number)
@@ -183,7 +185,7 @@ namespace Lexer
                 default:
                     var answer = ReadToLimiter(line, index, number);
                     Console.WriteLine("Error in determine NumSys: " + answer.Item1);
-                    if ((answer.Item2 < line.Count())) { ProcessLine(line, answer.Item2); }
+                    if ((answer.Item2 < line.Length)) { ProcessLine(line, answer.Item2); }
                     break;
             }
             
@@ -197,7 +199,7 @@ namespace Lexer
             {
                 number += line[i].ToString();
                 i++;
-                while ((i < line.Count())
+                while ((i < line.Length)
                        && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i]))
                        && isNumber)
                 {
@@ -234,7 +236,7 @@ namespace Lexer
             }
             if (!Char.IsLetter(number[number.Length - 1]) && isNumber)
             { Console.WriteLine("Id: " + numSys + ", val: " + number); }
-            if ((i < line.Count())) { ProcessLine(line, i); }
+            if ((i < line.Length)) { ProcessLine(line, i); }
         }
         
         private void ProcessNumberWithExponent(string line, int index, string number)
@@ -247,7 +249,7 @@ namespace Lexer
             {
                 number += line[i].ToString();
                 i++;
-                while ((i < line.Count())
+                while ((i < line.Length)
                        && ((line[i] != Global.whiteSpace) && !Global.limiters.Contains(line[i]))
                        && isNumber)
                 {
@@ -273,13 +275,17 @@ namespace Lexer
             }
             if (!Char.IsLetter(number[number.Length - 1]) && isNumber)
             { Console.WriteLine("Id: number " + NumericSystem.WithExponent + ", val: " + number); }
-            if ((i < line.Count())) { ProcessLine(line, i); }
+            if ((i < line.Length)) { ProcessLine(line, i); }
         }
         
         private void ProcessLimiter(string line, int index)
         {
             int i = index;
-            string possibleToken = line[i].ToString() + line[i + 1].ToString();
+            string possibleToken = "";
+            if (i + 1 < line.Length)
+            {
+                possibleToken = line[i].ToString() + line[i + 1].ToString();
+            }
             bool complex = false;
             switch (possibleToken)
             {
@@ -355,7 +361,8 @@ namespace Lexer
                         break;
                 }
             }
-            if (++i < line.Count()) { ProcessLine(line, i); }
+            i++;
+            if (i < line.Length) { ProcessLine(line, i); }
         }
     }
 }
